@@ -3,6 +3,18 @@ layout: lesson
 root: ../..
 title: Data Storage Solution - Stash 
 ---
+<!-- Add these 2 lines to any page you want to be customizable.
+  -- The content of the div is JSON to configure the customizer.
+  -- If you add "foo": ["Foo bar:", null] to the JSON, then "{foo}"
+  -- will be substituted in the document and a "Foo bar" input will
+  -- be created in the control box.
+  --
+  -- If any element in your document has id "osgcustomize-activate",
+  -- it will trigger the control panel. Otherwise osgcustomize will
+  -- draw this button for you. -->
+<div id="osgcustomize" class="hidden">{"username": ["Username", null]}</div>
+<script src="/general/js/osgcustomize.js"></script>
+
 <div class="objectives" markdown="1">
 
 #### Objectives
@@ -21,12 +33,16 @@ accessible to the worker nodes.  A detailed description about the mechanism
 of *stash* can be found in the OSG connectbook. Here we will focus on how to 
 transfer the files from your laptop to *stash*.  
 
+You may
+<a id="osgcustomize-activate" href="#">customize this tutorial</a>
+for your personal details, if you wish.
+
 <h2> Where is stash? </h2> 
 Stash is mounted on your account at login.osgconnect.edu.  You can login with 
 the  secured shell (ssh) protocol by typing 
 
 ~~~
-ssh username@login.osgconnect.net #Connect to the remote host with your username
+ssh {username}@login.osgconnect.net #Connect to the remote host with your username
 passwd:       # your password
 cd ~/data    # This is where the *stash* is mounted for you. You can keep the data here for a quick access by worker machines.
 ~~~
@@ -35,7 +51,7 @@ cd ~/data    # This is where the *stash* is mounted for you. You can keep the da
 You can make the data on *stash* publically available on the WWW. The data copied or moved to the directory *~/data/public* is available on WWW as 
 
 ~~~
-http://stash.osgconnect.net/+yourusername.
+http://stash.osgconnect.net/+{username}.
 ~~~
 
 
@@ -47,14 +63,14 @@ globus. Globus is the most reliable approach for transferring a large amount of 
 To transfer a file called "BigData.tar.gz" via scp from your local laptop to *stash*
 
 ~~~
-scp BigData.tar.gz username@login.osgconnect.net:~/data/.  #Transfers the file "BigData.tar.gz" using secured copy.
+scp BigData.tar.gz {username}@login.osgconnect.net:~/data/.  #Transfers the file "BigData.tar.gz" using secured copy.
 ~~~
 {:class="in"}
 
 You can do the same transfer via rsync, as
 
 ~~~
-rsync -v -e ssh BigData.tar.gz username@login.osgconnect.net:~/data/.
+rsync -v -e ssh BigData.tar.gz {username}@login.osgconnect.net:~/data/.
 ~~~
 {:class="in"}
 
@@ -73,7 +89,7 @@ necessary files, we use the *tutorial* command on OSG.
 Log in OSG
 
 ~~~
-$ ssh username@login.osgconnect.net
+$ ssh {username}@login.osgconnect.net
 ~~~
 
 type 
@@ -104,7 +120,7 @@ mv par_all27_prot_lipid.inp ~/data/public/.  #moving the parameter file from the
 You can view the parameter file appear on WWW
 
 ~~~
-http://stash.osgconnect.net/+yourusername
+http://stash.osgconnect.net/+{username}
 ~~~
 
 Now we want the parameter file available on the execution (worker) machine when the 
@@ -119,7 +135,7 @@ You can see that the job execution script "namd_stash_run.sh" has the following 
 #!/bin/bash  
 source /cvmfs/oasis.opensciencegrid.org/osg/modules/lmod/5.6.2/init/bash #sourcing a shell specific file that adds the module command to your environment
 module load namd/2.9  #loading the namd module
-wget --no-check-certificate http://stash.osgconnect.net/+username/par_all27_prot_lipid.inp # Getting the data from the *stash*. Insert your username. 
+wget --no-check-certificate http://stash.osgconnect.net/+{username}/par_all27_prot_lipid.inp # Getting the data from the *stash*. Insert your username. 
 namd2 ubq_gbis_eq.conf  #Executing the NAMD simulation
 ~~~
 

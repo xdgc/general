@@ -1,0 +1,67 @@
+
+#osgcustomize {
+	font-family: 'HelveticaNeue-UltraLight', HelveticaNeue, Helvetica, Arial, sans-serif;
+	font-size: 130%;
+	line-height: normal;
+}
+
+#osgcustomize button {
+	font-family: 'HelveticaNeue-UltraLight', HelveticaNeue, Helvetica, Arial, sans-serif;
+	font-size: 90%;
+}
+
+#osgcustomize button.closecontrols {
+	margin-top: 1em;
+	margin-bottom: 0.5em;
+}
+
+#osgcustomize button.activate {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 1em;
+}
+
+#osgcustomize fieldset.controls {
+	position: fixed;
+	top: 20%;
+	left: 50%;
+	width: 50%;
+	transform: translateX(-50%);
+	margin: 1em;
+	border: 1px solid #444;
+	background-color: #eee;
+	border-radius: 0.75em;
+	box-shadow: 10px 10px 5px #888;
+	font-family: 'HelveticaNeue-UltraLight', HelveticaNeue, Helvetica, Arial, sans-serif;
+	font-size: 130%;
+}
+
+#osgcustomize fieldset.controls p.intro {
+	margin-top: 1em;
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+#osgcustomize fieldset label {
+	width: 5em;
+	margin-left: 1em;
+	margin-right: 1em;
+	font-family: 'HelveticaNeue-UltraLight', HelveticaNeue, Helvetica, Arial, sans-serif;
+	font-size: 100%;
+	display: inline; /* wtf, github makes this block */
+}
+
+#osgcustomize fieldset input {
+	width: 15em;
+	font-family: 'HelveticaNeue-UltraLight', HelveticaNeue, Helvetica, Arial, sans-serif;
+	font-size: 100%;
+}
+
+hidden {
+	display: none;
+}
+
+.osgcustomize_target {
+	font-weight: bold;
+}

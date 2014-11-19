@@ -11,6 +11,26 @@
 <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
+
+
+    <!-- Add these 2 lines to any page you want to be customizable.
+      -- The content of the div is JSON to configure the customizer.
+      -- If you add "foo": ["Foo bar:", null] to the JSON, then "{foo}"
+      -- will be substituted in the document and a "Foo bar" input will
+      -- be created in the control box.
+      --
+      -- If any element in your document has id "osgcustomize-activate",
+      -- it will trigger the control panel. Otherwise osgcustomize will
+      -- draw this button for you. -->
+    <div id="osgcustomize" class="hidden">
+	{
+		"username": ["Username", null]
+		"loginnode": ["Login node", null]
+	}
+	</div>
+    <script src="/general/js/osgcustomize.js"></script>
+
+
     <header class="header">
  <span id="github-ribbon"><a href="https://github.com/SWC-OSG-Workshop/general.git">Fork me on GitHub</a></span>
 
@@ -47,6 +67,11 @@
           <li id="nav-Contacts">
             <a href="http://swc-osg-workshop.github.io/general/contacts.html"> <h3> Contacts </h3> </a>
           </li>
+
+          <li id="nav-Customize">
+            <a id="osgcustomize-activate" href="#"> <h3> Customize </h3> </a>
+          </li>
+
 <!--
           <form class="navbar-search" method="get" action="http://www.google.com/search">
             <input type="hidden" name="sitesearch" value="http://software-carpentry.org" />

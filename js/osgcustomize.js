@@ -87,16 +87,16 @@ var OSGCustomize = function () {
 			range.deleteContents();
 		}
 		$('body *').replaceText(/{([a-zA-Z0-9_]*)}/g,
-		                        '<span class="osgcustomize_target" id="osgcustomize_target_$1">$1</span>');
+		                        '<span class="osgcustomize_target osgcustomize_target_$1">$1</span>');
 	};
 
 	cls.prototype.update = function (subject) {
 		if (subject) {
-			$('#osgcustomize_target_' + subject).html(this.subs[subject]);
+			$('.osgcustomize_target_' + subject).html(this.subs[subject]);
 			return;
 		}
 		for (var k in this.subs) {
-			$('#osgcustomize_target_' + k).html(this.subs[k]);
+			$('.osgcustomize_target_' + k).html(this.subs[k]);
 		}
 	};
 

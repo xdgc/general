@@ -1,12 +1,12 @@
 
 #osgcustomize {
-	font-family: 'HelveticaNeue-UltraLight', HelveticaNeue, Helvetica, Arial, sans-serif;
+	x-font-family: 'HelveticaNeue-UltraLight', HelveticaNeue, Helvetica, Arial, sans-serif;
 	font-size: 130%;
 	line-height: normal;
 }
 
 #osgcustomize button {
-	font-family: 'HelveticaNeue-UltraLight', HelveticaNeue, Helvetica, Arial, sans-serif;
+	x-font-family: 'HelveticaNeue-UltraLight', HelveticaNeue, Helvetica, Arial, sans-serif;
 	font-size: 90%;
 }
 
@@ -33,7 +33,7 @@
 	background-color: #eee;
 	border-radius: 0.75em;
 	box-shadow: 10px 10px 5px #888;
-	font-family: 'HelveticaNeue-UltraLight', HelveticaNeue, Helvetica, Arial, sans-serif;
+	x-font-family: 'HelveticaNeue-UltraLight', HelveticaNeue, Helvetica, Arial, sans-serif;
 	font-size: 130%;
 }
 
@@ -47,14 +47,14 @@
 	width: 5em;
 	margin-left: 1em;
 	margin-right: 1em;
-	font-family: 'HelveticaNeue-UltraLight', HelveticaNeue, Helvetica, Arial, sans-serif;
+	x-font-family: 'HelveticaNeue-UltraLight', HelveticaNeue, Helvetica, Arial, sans-serif;
 	font-size: 100%;
 	display: inline; /* wtf, github makes this block */
 }
 
 #osgcustomize fieldset input {
 	width: 15em;
-	font-family: 'HelveticaNeue-UltraLight', HelveticaNeue, Helvetica, Arial, sans-serif;
+	x-font-family: 'HelveticaNeue-UltraLight', HelveticaNeue, Helvetica, Arial, sans-serif;
 	font-size: 100%;
 }
 
